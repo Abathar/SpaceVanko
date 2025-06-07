@@ -1,0 +1,186 @@
+\doxysection{Source/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{Source/main.cpp@{Source/main.cpp}}
+{\ttfamily \#include $<$SDL3/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL3/\+SDL\+\_\+main.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$print$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_projectile}{Projectile}}
+\begin{DoxyCompactList}\small\item\em This Class will be used for prainting the character projectiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cpp_ad19abaacb073bdef7940926f64b2aace}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Init funtcion\+: Initialize the screen. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8cpp_a8e21ef8f33ca4eb25e1a804ac55c0220}{Load\+Media}} ()
+\begin{DoxyCompactList}\small\item\em Load\+Media funtcion\+: Load the sprites and images. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a7f7a3199c392465d0767c6506c1af5b4}{Close}} ()
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_ac912e0eb5d26bff3a0e5b2f8bb128c16}{Load\+Texture}} (std\+::string path)
+\item 
+int \mbox{\hyperlink{main_8cpp_a700a0caa5b70a06d1064e576f9f3cf65}{main}} (int argc, char \texorpdfstring{$\ast$}{*}args\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint16\+\_\+t \mbox{\hyperlink{main_8cpp_a8416ba3764516fa75341fcaac2dd0a99}{SCREEN\+\_\+\+WIDTH}} = 960
+\item 
+const uint16\+\_\+t \mbox{\hyperlink{main_8cpp_a17356f760c4f9346f10641760dbedf87}{SCREEN\+\_\+\+HEIGHT}} = 540
+\item 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a222f53a6a442d8f716dffd665e83528a}{g\+Window}} = NULL
+\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a4735638969a524c4ac90a88f23c59a1f}{g\+Renderer}} = NULL
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a87502c36b81dc879308f4684e3f7edb0}{g\+Character\+\_\+t}} = NULL
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a2de02e4daf8ff4d66d950498a46b39e8}{g\+Background\+\_\+t}} = NULL
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_ae2955660793d8cc33e775ccabce59583}{g\+Animated\+Projectile\+\_\+t}} = NULL
+\item 
+SDL\+\_\+\+FRect \mbox{\hyperlink{main_8cpp_a03c3ec30ef784dab6a70aab3ed98f7e2}{character\+\_\+ori}}
+\item 
+SDL\+\_\+\+FRect \mbox{\hyperlink{main_8cpp_a8628e2cc842afb1440b0913ec23f8759}{character\+\_\+dest}}
+\item 
+const float \mbox{\hyperlink{main_8cpp_ab3377abe4c44c3762938497dbf2d0112}{MOVEMENT\+\_\+\+SPEED}} = 0.\+20f
+\item 
+bool \mbox{\hyperlink{main_8cpp_ac746fa6ad48d19984a159f14bec028a3}{quit}} = false
+\item 
+SDL\+\_\+\+Event \mbox{\hyperlink{main_8cpp_a6b57f01d3c576db5368dd0efc2f435a4}{event}}
+\item 
+const int \mbox{\hyperlink{main_8cpp_a25e46876f37a4a8283f024ceaac181b7}{WALKING\+\_\+\+ANIMATION\+\_\+\+FRAMES}} = 15
+\item 
+SDL\+\_\+\+FRect \mbox{\hyperlink{main_8cpp_a99a1e079a72ae710751c9e7010eaa144}{g\+Sprite\+Clips}} \mbox{[}\mbox{\hyperlink{main_8cpp_a25e46876f37a4a8283f024ceaac181b7}{WALKING\+\_\+\+ANIMATION\+\_\+\+FRAMES}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a7f7a3199c392465d0767c6506c1af5b4}\index{main.cpp@{main.cpp}!Close@{Close}}
+\index{Close@{Close}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily \label{main_8cpp_a7f7a3199c392465d0767c6506c1af5b4} 
+void Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_ad19abaacb073bdef7940926f64b2aace}\index{main.cpp@{main.cpp}!Init@{Init}}
+\index{Init@{Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_ad19abaacb073bdef7940926f64b2aace} 
+bool Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Init funtcion\+: Initialize the screen. 
+
+\Hypertarget{main_8cpp_a8e21ef8f33ca4eb25e1a804ac55c0220}\index{main.cpp@{main.cpp}!LoadMedia@{LoadMedia}}
+\index{LoadMedia@{LoadMedia}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadMedia()}{LoadMedia()}}
+{\footnotesize\ttfamily \label{main_8cpp_a8e21ef8f33ca4eb25e1a804ac55c0220} 
+bool Load\+Media (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Load\+Media funtcion\+: Load the sprites and images. 
+
+\Hypertarget{main_8cpp_ac912e0eb5d26bff3a0e5b2f8bb128c16}\index{main.cpp@{main.cpp}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily \label{main_8cpp_ac912e0eb5d26bff3a0e5b2f8bb128c16} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} Load\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{path}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a700a0caa5b70a06d1064e576f9f3cf65}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a700a0caa5b70a06d1064e576f9f3cf65} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{args}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a8628e2cc842afb1440b0913ec23f8759}\index{main.cpp@{main.cpp}!character\_dest@{character\_dest}}
+\index{character\_dest@{character\_dest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{character\_dest}{character\_dest}}
+{\footnotesize\ttfamily \label{main_8cpp_a8628e2cc842afb1440b0913ec23f8759} 
+SDL\+\_\+\+FRect character\+\_\+dest}
+
+\Hypertarget{main_8cpp_a03c3ec30ef784dab6a70aab3ed98f7e2}\index{main.cpp@{main.cpp}!character\_ori@{character\_ori}}
+\index{character\_ori@{character\_ori}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{character\_ori}{character\_ori}}
+{\footnotesize\ttfamily \label{main_8cpp_a03c3ec30ef784dab6a70aab3ed98f7e2} 
+SDL\+\_\+\+FRect character\+\_\+ori}
+
+\Hypertarget{main_8cpp_a6b57f01d3c576db5368dd0efc2f435a4}\index{main.cpp@{main.cpp}!event@{event}}
+\index{event@{event}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily \label{main_8cpp_a6b57f01d3c576db5368dd0efc2f435a4} 
+SDL\+\_\+\+Event event}
+
+\Hypertarget{main_8cpp_ae2955660793d8cc33e775ccabce59583}\index{main.cpp@{main.cpp}!gAnimatedProjectile\_t@{gAnimatedProjectile\_t}}
+\index{gAnimatedProjectile\_t@{gAnimatedProjectile\_t}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gAnimatedProjectile\_t}{gAnimatedProjectile\_t}}
+{\footnotesize\ttfamily \label{main_8cpp_ae2955660793d8cc33e775ccabce59583} 
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} g\+Animated\+Projectile\+\_\+t = NULL}
+
+\Hypertarget{main_8cpp_a2de02e4daf8ff4d66d950498a46b39e8}\index{main.cpp@{main.cpp}!gBackground\_t@{gBackground\_t}}
+\index{gBackground\_t@{gBackground\_t}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gBackground\_t}{gBackground\_t}}
+{\footnotesize\ttfamily \label{main_8cpp_a2de02e4daf8ff4d66d950498a46b39e8} 
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} g\+Background\+\_\+t = NULL}
+
+\Hypertarget{main_8cpp_a87502c36b81dc879308f4684e3f7edb0}\index{main.cpp@{main.cpp}!gCharacter\_t@{gCharacter\_t}}
+\index{gCharacter\_t@{gCharacter\_t}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gCharacter\_t}{gCharacter\_t}}
+{\footnotesize\ttfamily \label{main_8cpp_a87502c36b81dc879308f4684e3f7edb0} 
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} g\+Character\+\_\+t = NULL}
+
+\Hypertarget{main_8cpp_a4735638969a524c4ac90a88f23c59a1f}\index{main.cpp@{main.cpp}!gRenderer@{gRenderer}}
+\index{gRenderer@{gRenderer}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gRenderer}{gRenderer}}
+{\footnotesize\ttfamily \label{main_8cpp_a4735638969a524c4ac90a88f23c59a1f} 
+SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*} g\+Renderer = NULL}
+
+\Hypertarget{main_8cpp_a99a1e079a72ae710751c9e7010eaa144}\index{main.cpp@{main.cpp}!gSpriteClips@{gSpriteClips}}
+\index{gSpriteClips@{gSpriteClips}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gSpriteClips}{gSpriteClips}}
+{\footnotesize\ttfamily \label{main_8cpp_a99a1e079a72ae710751c9e7010eaa144} 
+SDL\+\_\+\+FRect g\+Sprite\+Clips\mbox{[}\mbox{\hyperlink{main_8cpp_a25e46876f37a4a8283f024ceaac181b7}{WALKING\+\_\+\+ANIMATION\+\_\+\+FRAMES}}\mbox{]}}
+
+\Hypertarget{main_8cpp_a222f53a6a442d8f716dffd665e83528a}\index{main.cpp@{main.cpp}!gWindow@{gWindow}}
+\index{gWindow@{gWindow}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gWindow}{gWindow}}
+{\footnotesize\ttfamily \label{main_8cpp_a222f53a6a442d8f716dffd665e83528a} 
+SDL\+\_\+\+Window\texorpdfstring{$\ast$}{*} g\+Window = NULL}
+
+\Hypertarget{main_8cpp_ab3377abe4c44c3762938497dbf2d0112}\index{main.cpp@{main.cpp}!MOVEMENT\_SPEED@{MOVEMENT\_SPEED}}
+\index{MOVEMENT\_SPEED@{MOVEMENT\_SPEED}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MOVEMENT\_SPEED}{MOVEMENT\_SPEED}}
+{\footnotesize\ttfamily \label{main_8cpp_ab3377abe4c44c3762938497dbf2d0112} 
+const float MOVEMENT\+\_\+\+SPEED = 0.\+20f}
+
+\Hypertarget{main_8cpp_ac746fa6ad48d19984a159f14bec028a3}\index{main.cpp@{main.cpp}!quit@{quit}}
+\index{quit@{quit}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{quit}{quit}}
+{\footnotesize\ttfamily \label{main_8cpp_ac746fa6ad48d19984a159f14bec028a3} 
+bool quit = false}
+
+\Hypertarget{main_8cpp_a17356f760c4f9346f10641760dbedf87}\index{main.cpp@{main.cpp}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily \label{main_8cpp_a17356f760c4f9346f10641760dbedf87} 
+const uint16\+\_\+t SCREEN\+\_\+\+HEIGHT = 540}
+
+\Hypertarget{main_8cpp_a8416ba3764516fa75341fcaac2dd0a99}\index{main.cpp@{main.cpp}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily \label{main_8cpp_a8416ba3764516fa75341fcaac2dd0a99} 
+const uint16\+\_\+t SCREEN\+\_\+\+WIDTH = 960}
+
+\Hypertarget{main_8cpp_a25e46876f37a4a8283f024ceaac181b7}\index{main.cpp@{main.cpp}!WALKING\_ANIMATION\_FRAMES@{WALKING\_ANIMATION\_FRAMES}}
+\index{WALKING\_ANIMATION\_FRAMES@{WALKING\_ANIMATION\_FRAMES}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WALKING\_ANIMATION\_FRAMES}{WALKING\_ANIMATION\_FRAMES}}
+{\footnotesize\ttfamily \label{main_8cpp_a25e46876f37a4a8283f024ceaac181b7} 
+const int WALKING\+\_\+\+ANIMATION\+\_\+\+FRAMES = 15}
+
