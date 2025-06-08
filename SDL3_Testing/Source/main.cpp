@@ -15,43 +15,6 @@ const uint16_t SCREEN_WIDTH = 960;
 const uint16_t SCREEN_HEIGHT = 540;
 /********************************/
 
-/********** CLASSES **********/
-/**
-* @Class Projectile
-* @brief This Class will be used for prainting the character projectiles
-*/
-class Projectile {
-public:
-	SDL_FRect projectileDest;
-	int angle;
-	int frame;
-	int speed;
-	/**
-	* @brief Class builder
-	*/
-	Projectile(SDL_FRect, int,int, int);
-	/**
-	* @brief Function to calculate projectile vel
-	* 
-	*/
-	static int calculateVel(int num);
-};
-/**
-* @brief Function to calculate projectile vel
-* @param num Put num to 0
-*/
-static int calculateVel(int num) {
-	num = 0;
-}
-Projectile::Projectile(SDL_FRect projectileDest, int angle, int frame, int speed) {
-	this->projectileDest = projectileDest;
-	this->angle = angle;
-	this->frame = frame;
-	this->speed = speed;
-
-}
-/********************************/
-
 /********** DECLARATIONS **********/
 /**
 * @brief Starts up SDL and creates window
@@ -163,6 +126,7 @@ int main(int argc, char* args[])
 	SDL_Window* gWindow = NULL;				// The window we'll be rendering to
 	SDL_Renderer* gRenderer = NULL;			//The window renderer
 	SDL_Texture* gBackground_t = NULL;				//Path: Content/Images/background.png
+	SDL_Texture* gAnimatedBackground_t = NULL;				//Path: Content/Images/background.png
 	SDL_Texture* gAnimatedProjectile_t = NULL;		//Path: Content/Images/animatedProjectile.png
 	bool quit = false;//Main loop flag
 	//Event handler
@@ -194,7 +158,7 @@ int main(int argc, char* args[])
 	}
 	else
 	{
-
+		loadAndCreate(&gAnimatedBackground_t, "Content/Images/animated_background.png", &gRenderer);
 		loadAndCreate(&gBackground_t, "Content/Images/background.png", &gRenderer);
 		loadAndCreate(&gCharacter_t, "Content/Images/character.png", &gRenderer);
 
