@@ -29,9 +29,9 @@
     <ClCompile Include="Source\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="character.cpp" />
+    <ClCompile Include="LocalSprite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="character.h" />
+    <ClInclude Include="LocalSprite.h" />
   </ItemGroup>
 </Project>
