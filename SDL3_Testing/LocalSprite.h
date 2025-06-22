@@ -34,18 +34,34 @@ public:
 	* @brief Destructor, Deallocates memory
 	*/
 	~LocalSprite();
-	void SetNframes();
+
+	//////////////////////SETTERS//////////////////////
+	/**
+	* @brief Number of image frames setter
+	*/
+	void SetN_Frames( int nFrames);
+	/**
+	* @brief Width image Setter
+	*/
 	void SetWidth();
+	/**
+	* @brief Heigh image Setter
+	*/
 	void SetHeigh();
-	void SePath();
-	void Step(int x,int y);
-	SDL_FRect gSpriteClips(int x,int y);
+	/**
+	* @brief Image pathing Setter
+	*/
+	void SetPath();
+	///////////////////END OF SETTERS//////////////////
+	//////////////////////FEATURES//////////////////////
+	void Step(int x, int y);
+	SDL_FRect gSpriteClips(int x, int y);
+	///////////////////END OF FEATURES//////////////////
 
 private:
-	int nframes;
+	int nFrames;
 	int width;
 	int heigh;
 	std::string path;
-	
 };
 

@@ -36,11 +36,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CreatineEngine\CreatineEngineCore\CreatineEngineCore.vcxproj">
-      <Project>{357200ee-4962-497c-853b-5cd1b4b3fdb5}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="LocalSprite.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
